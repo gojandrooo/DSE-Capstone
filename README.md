@@ -6,6 +6,7 @@ to run this project:
 - in terminal, run the following command:
 ```python
 > python3 venv.py
+> pip install -r requirements.txt
 ```
     - this will create a virtual environment called `venv_debris_flow`
     - it will also install the required packages found in requirements.txt
