@@ -1,0 +1,15 @@
+pandas==1.4.2
+openpyxl==3.1.2
+#sklearn==1.0.2
+torch==1.13.1
+tabula==1.0.5
+s3fs==2021.11.0
+shapely==1.8.5
+geopandas==0.12.2
+pyarrow==11.0.0
+pysheds==0.3.3
+fastfuels==1.0.4
+rioxarray==0.13.4
+geojsoncontour==0.4.0
+pygeos==0.14
+plotly==5.14.1
