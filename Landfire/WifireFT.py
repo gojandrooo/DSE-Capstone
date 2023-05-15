@@ -20,7 +20,7 @@ except ModuleNotFoundError:
     print("Make sure xarray, rioxarray, dask, rasterio, and geopandas are installed.")
     print("Consider running the API inside a Docker container provided by the repository.")
 
-
+import geopandas as gpd
 import requests
 from datetime import datetime
 from os.path import isfile
