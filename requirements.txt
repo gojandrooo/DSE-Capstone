@@ -11,5 +11,9 @@ pysheds==0.3.3
 fastfuels==1.0.4
 rioxarray==0.13.4
 geojsoncontour==0.4.0
-pygeos==0.14
+pygeos==0.13
 plotly==5.14.1
+xarray==2022.12.0
+dask==2023.4.1
+dask.distributed==2023.4.1
+#dask distributed==2023.4.1
