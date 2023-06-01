@@ -1,0 +1,10 @@
+{
+    "data":{"lr_data_file":"../../data/ofr20161106-na-omit.csv",
+            "nn_data_file":""     
+                },
+    "model":{
+                  "lr_pickle_file": "../../model/ST16_LogisticRegressionModel.pkl",
+                  "nn_pth_file":""
+                  },
+    "model_class":""        
+}
