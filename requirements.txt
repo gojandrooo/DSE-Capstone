@@ -16,6 +16,8 @@ plotly==5.14.1
 xarray==2022.12.0
 dask==2023.4.1
 dask[distributed]==2023.4.1
+#dask-labextension
+#nodejs==16.19.0
 folium==0.14.0
 shap==0.41.0
 # might need slightly older version

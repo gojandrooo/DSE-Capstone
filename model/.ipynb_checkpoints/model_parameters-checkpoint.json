@@ -1,0 +1,1 @@
+{"two_layer": {"features": ["peak_i15_mmh", "prophm23", "SuscFrac"], "hidden_size": 50, "lr": 0.01, "dropout_rate": 0.1, "weights": "two_layer.pth"}}
