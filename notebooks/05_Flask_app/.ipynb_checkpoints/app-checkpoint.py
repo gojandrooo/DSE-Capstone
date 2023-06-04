@@ -62,6 +62,17 @@ else:
 
 model.eval()
 
+#load the test data 
+#this file will have one row for each site ( 693 records)
+
+site_file = data_dir + 'sites_v02_plot_data.parquet'
+
+X_test_df = pd.read_parquet(site_file)
+nn_data = X_test_df[params['features']]  
+
+#scale the test data with same scaler as used to 
+nn_data = ss.transform(nn_data)
+
 #URL Binding     
 @app.route('/predictForAllSites/', methods=['GET'])
 def predictForAllSites():
