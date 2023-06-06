@@ -5,11 +5,19 @@ to run this project:
 - open a terminal window in the repository folder
 - in terminal, run the following command:
 ```python
+
+> conda create -n venv_debris_flow python=3.10.10
+> conda activate venv_debris_flow
+> conda -y install jupyter jupyterlab ipykernel
+> python -m ipykernel install --user --name=venv_debris_flow
+> # you may need to restart the environment to use it in jupyter lab
+> conda deactivate
+> conda activate venv_debris_flow
 > pip install -r requirements.txt
 ```
-    - it will install the required packages found in requirements.txt
+    - it will install the required packages with necessary dependencies found in requirements.txt
 
-
+now when you launch a notebook, select the `venv_debris_flow` kernel
 
 
 Decription of data files:
