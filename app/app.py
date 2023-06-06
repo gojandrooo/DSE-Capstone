@@ -43,10 +43,13 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model = Net.TwoLayer(input_size, hidden_size, output_size, dropout_rate).to(device)
 # load weights/biases
 model.load_state_dict(torch.load(model_dir + weights, map_location=device))
+model.eval()
 
 # LOAD IN DATA
 # needed to scale to training set
-X_train_df, X_test_df, y_train_df, y_test_df = pickle.load(open(data_dir + "train_test_data.pkl", "rb"))
+# X_train_df, X_test_df, y_train_df, y_test_df = pickle.load(open(data_dir + "train_test_data.pkl", "rb"))
+X_train_df, X_test_df, y_train_df, y_test_df = pd.read_pickle(open(data_dir + "train_test_data.pkl", "rb"))
+
 # delete the testing data, we don't need it
 del X_test_df, y_test_df
 X_train_df = X_train_df[features]
@@ -197,6 +200,8 @@ def display_map(input_value):
 if __name__ == '__main__':
     app.run_server(
         debug=False,
+        host = '0.0.0.0',
+        port = 8050
         #mode='inline',
         #mode='jupyterlab',
         #host='localhost',
