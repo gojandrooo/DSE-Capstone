@@ -30,7 +30,7 @@ hidden_size = one_model['hidden_size']
 dropout_rate = one_model['dropout_rate']
 output_size = 1
 
-# this is not programmatic
+# model class name
 model_class = one_model['model_class'] # it isn't getting passed in anywhere
 # load feature set
 features = one_model['features']
@@ -39,11 +39,12 @@ weights = one_model['weights']
 
 # set device
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-# instantiate model
-model = Net.TwoLayer(input_size, hidden_size, output_size, dropout_rate).to(device)
-# load weights/biases
+# instantiate model for inference
+with torch.no_grad(): # turn off gradiants for inference
+    model = Net.TwoLayer(input_size, hidden_size, output_size, dropout_rate).to(device)
+    model.eval() # turn off dropout etc for inference
+    # load weights/biases
 model.load_state_dict(torch.load(model_dir + weights, map_location=device))
-model.eval()
 
 # LOAD IN DATA
 # needed to scale to training set
