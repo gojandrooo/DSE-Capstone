@@ -31,7 +31,7 @@ dropout_rate = one_model['dropout_rate']
 output_size = 1
 
 # model class name
-model_class = one_model['model_class'] # it isn't getting passed in anywhere
+model_class = one_model['model_class']
 # load feature set
 features = one_model['features']
 # load trained model weights file_name
@@ -41,7 +41,12 @@ weights = one_model['weights']
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # instantiate model for inference
 with torch.no_grad(): # turn off gradiants for inference
-    model = Net.TwoLayer(input_size, hidden_size, output_size, dropout_rate).to(device)
+    if model_class == 'OneLayer':
+        model = Net.OneLayer(input_size, hidden_size, output_size, dropout_rate).to(device)
+    elif model_class == 'TwoLayer':
+        model = Net.TwoLayer(input_size, hidden_size, output_size, dropout_rate).to(device)
+    elif model_class == 'ThreeLayer':
+        model = Net.ThreeLayer(input_size, hidden_size, output_size, dropout_rate).to(device)
     model.eval() # turn off dropout etc for inference
     # load weights/biases
 model.load_state_dict(torch.load(model_dir + weights, map_location=device))
