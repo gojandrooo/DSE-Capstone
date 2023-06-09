@@ -13,7 +13,7 @@ import numpy as np
 #intialize values
 data_dir = './data/'
 model_dir = './model/'
-architecture = 'ThreeLayer_500_epochs_optimized_roc_auc_score' # use whichever model name desired
+architecture = 'TwoLayer_250_epochs_optimized_roc_auc_score' # use whichever model name desired
 peak_mmh = 'peak_i15_mmh'
 
 
