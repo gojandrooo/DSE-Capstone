@@ -31,6 +31,7 @@ This repository is organized so that everything in the `notebooks` folder can be
     ├── 02_data_prep
     ├── 03_ML_models
     └── 04_data_viz
+├── ABC Debris - Final Poster.pdf
 ├── ABC Debris - Final Presentation.pdf
 ├── ABC Debris - Final Report.pdf
 ├── LICENSE
